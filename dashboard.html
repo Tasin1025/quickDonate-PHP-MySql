@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - QuickDonate</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+
+    <!-- Navbar -->
+    <nav class="bg-red-600 p-4 text-white">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">QuickDonate</h1>
+            <ul class="flex space-x-6">
+                <li><a href="dashboard.html" class="hover:underline">Dashboard</a></li>
+                <li><a href="search.html" class="hover:underline">Find Donors</a></li>
+                <li><a href="request.html" class="hover:underline">Request Blood</a></li>
+                <li><a href="profile.html" class="hover:underline">Profile</a></li>
+                <li><a href="contact.html" class="hover:underline">Contact</a></li>
+                <li><a href="logout.php" class="hover:underline">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Dashboard Section -->
+    <section class="max-w-4xl mx-auto mt-10 p-6 bg-white shadow-lg rounded-lg">
+        <h2 class="text-3xl font-bold text-center text-red-600">Welcome to Your Dashboard</h2>
+        <p class="text-center text-gray-600 mt-2">Manage your blood donations and requests here.</p>
+
+        <!-- User Info -->
+        <div class="mt-6 bg-gray-100 p-4 rounded-lg">
+            <h3 class="text-xl font-semibold">Your Information</h3>
+            <p><strong>Name:</strong> John Doe</p>
+            <p><strong>Blood Group:</strong> A+</p>
+            <p><strong>Location:</strong> Dhanmondi</p>
+            <p><strong>Donation Status:</strong> <span class="text-green-600">Active</span></p>
+        </div>
+
+        <!-- Donation & Request Actions -->
+        <div class="mt-6 flex justify-between">
+            <a href="donate.html" class="bg-green-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-green-700 transition">Donate Blood</a>
+            <a href="request.html" class="bg-red-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-red-700 transition">Request Blood</a>
+        </div>
+
+        <!-- History Section -->
+        <div class="mt-8">
+            <h3 class="text-xl font-semibold text-red-600">Your Blood Donation & Request History</h3>
+            <table class="w-full mt-4 border-collapse border border-gray-300">
+                <thead>
+                    <tr class="bg-red-600 text-white">
+                        <th class="border border-gray-300 p-2">Date</th>
+                        <th class="border border-gray-300 p-2">Type</th>
+                        <th class="border border-gray-300 p-2">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="bg-gray-100 text-center">
+                        <td class="border border-gray-300 p-2">12 March 2025</td>
+                        <td class="border border-gray-300 p-2 text-green-600">Donation</td>
+                        <td class="border border-gray-300 p-2 text-green-600">Completed</td>
+                    </tr>
+                    <tr class="bg-gray-100 text-center">
+                        <td class="border border-gray-300 p-2">15 March 2025</td>
+                        <td class="border border-gray-300 p-2 text-red-600">Request</td>
+                        <td class="border border-gray-300 p-2 text-yellow-600">Pending</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white text-center py-6 mt-12">
+        <p>© 2025 QuickDonate | All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>

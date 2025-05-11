@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - QuickDonate</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+
+    <!-- Login Form Section -->
+    <section class="max-w-lg mx-auto mt-12 p-6 bg-white shadow-lg rounded-lg">
+        <h2 class="text-3xl font-bold text-center text-red-600">Login to QuickDonate</h2>
+        <p class="text-center text-gray-600 mt-2">Access your account and start helping.</p>
+
+        <form action="login.php" method="POST" class="mt-6 space-y-4">
+            <input type="email" name="email" placeholder="Email Address" class="w-full px-4 py-2 border rounded-lg focus:ring-red-500 focus:border-red-500" required>
+            <input type="password" name="password" placeholder="Password" class="w-full px-4 py-2 border rounded-lg focus:ring-red-500 focus:border-red-500" required>
+
+            <button type="submit" class="w-full bg-red-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-red-700 transition">Login</button>
+        </form>
+
+        <p class="text-center text-gray-600 mt-4">Don't have an account? 
+            <a href="register.html" class="text-red-600 font-semibold hover:underline">Register here</a>
+        </p>
+    </section>
+
+</body>
+</html>
