@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_SESSION['user_role'] = $user['role'];
 
             // Redirect to index.php upon successful login
-            header("Location: index.php");
+            header("Location: user_dashboard.php");
             exit;
         } else {
             // Incorrect password
