@@ -14,9 +14,9 @@
         <p class="text-center text-gray-600 mt-2">Join our life-saving community today.</p>
 
         <form action="register.php" method="POST" class="mt-6 space-y-4">
-            <input type="text" name="name" placeholder="Full Name" class="w-full px-4 py-2 border rounded-lg focus:ring-red-500 focus:border-red-500" required>
-            <input type="email" name="email" placeholder="Email Address" class="w-full px-4 py-2 border rounded-lg focus:ring-red-500 focus:border-red-500" required>
-            <input type="password" name="password" placeholder="Password" class="w-full px-4 py-2 border rounded-lg focus:ring-red-500 focus:border-red-500" required>
+            <input type="text" name="name" placeholder="Full Name" class="w-full px-4 py-2 border rounded-lg focus:ring-red-500 focus:border-red-500" required><br>
+            <input type="email" name="email" placeholder="Email Address" class="w-full px-4 py-2 border rounded-lg focus:ring-red-500 focus:border-red-500" required><br>
+            <input type="password" name="password" placeholder="Password" class="w-full px-4 py-2 border rounded-lg focus:ring-red-500 focus:border-red-500" required><br>
 
             <select name="blood_group" class="w-full px-4 py-2 border rounded-lg focus:ring-red-500 focus:border-red-500" required>
                 <option value="">Select Blood Group</option>
@@ -28,7 +28,7 @@
                 <option>O-</option>
                 <option>AB+</option>
                 <option>AB-</option>
-            </select>
+            </select><br>
 
             <select name="area" class="w-full px-4 py-2 border rounded-lg focus:ring-red-500 focus:border-red-500" required>
                 <option value="">Select Your Area</option>
@@ -42,7 +42,13 @@
                 <option>Bashundhara</option>
                 <option>Shyamoli</option>
                 <option>Farmgate</option>
-            </select>
+            </select><br>
+
+            <!-- Role Selection Dropdown -->
+            <select name="role" class="w-full px-4 py-2 border rounded-lg focus:ring-red-500 focus:border-red-500" required>
+                <option value="user">User (Donor/Recipient)</option>
+                <option value="admin">Admin</option>
+            </select><br>
 
             <button type="submit" class="w-full bg-red-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-red-700 transition">Register</button>
         </form>
@@ -50,6 +56,11 @@
         <p class="text-center text-gray-600 mt-4">Already have an account? 
             <a href="login.html" class="text-red-600 font-semibold hover:underline">Login here</a>
         </p>
+
+        <!-- Return Home Button -->
+        <div class="text-center mt-4">
+            <a href="index.html" class="bg-white text-red-600 px-6 py-2 rounded-full font-semibold text-lg shadow-lg hover:bg-red-100 transition">Return Home</a>
+        </div>
     </section>
 
 </body>
