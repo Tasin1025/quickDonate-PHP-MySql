@@ -14,8 +14,8 @@
         <p class="mt-4 text-lg">Find donors or donate blood to those in need.</p>
         <h2 class="mt-6 text-3xl font-semibold italic">Welcome to <span class="bg-white text-red-600 px-4 py-1 rounded-md shadow-lg">QuickDonate</span></h2>
         <div class="mt-6">
-            <a href="register.html" class="bg-white text-red-600 px-6 py-2 rounded-full font-semibold text-lg shadow-lg hover:bg-red-100 transition">Become a Donor</a>
-            <a href="login.html" class="ml-4 bg-white text-red-600 px-6 py-2 rounded-full font-semibold text-lg shadow-lg hover:bg-red-100 transition">Find a Donor</a>
+            <a href="register.php" class="bg-white text-red-600 px-6 py-2 rounded-full font-semibold text-lg shadow-lg hover:bg-red-100 transition">Become a Donor</a>
+            <a href="login.php" class="ml-4 bg-white text-red-600 px-6 py-2 rounded-full font-semibold text-lg shadow-lg hover:bg-red-100 transition">Find a Donor</a>
         </div>
     </header>
 
@@ -80,7 +80,7 @@
     <!-- Footer -->
     <footer class="bg-gray-800 text-white text-center py-6 mt-12">
         <p>© 2025 QuickDonate | All Rights Reserved</p>
-        <p>Created by <span class="font-semibold">Arpa Saha</span></p>
+        
     </footer>
 
 </body>

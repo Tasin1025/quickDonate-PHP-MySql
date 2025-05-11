@@ -1,3 +1,41 @@
+<?php
+// Include database connection file
+include('config.php');
+
+// Check if the form is submitted
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    // Get and sanitize user inputs
+    $name = mysqli_real_escape_string($conn, $_POST['name']);
+    $email = mysqli_real_escape_string($conn, $_POST['email']);
+    $password = mysqli_real_escape_string($conn, $_POST['password']);
+    $blood_group = mysqli_real_escape_string($conn, $_POST['blood_group']);
+    $area = mysqli_real_escape_string($conn, $_POST['area']);
+    $role = mysqli_real_escape_string($conn, $_POST['role']);
+
+    // Hash the password
+    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+
+    // Prepare SQL to insert data into the users table
+    $sql = "INSERT INTO users (name, email, password, blood_group, area, role) 
+            VALUES ('$name', '$email', '$hashed_password', '$blood_group', '$area', '$role')";
+
+    // Execute query and check if it was successful
+    if ($conn->query($sql) === TRUE) {
+        // Registration success, show alert and redirect to login page
+        echo "<script>
+                alert('Registration successful! Please login.');
+                window.location.href = 'login.php'; // Redirect to login page
+              </script>";
+    } else {
+        // Registration failed, show error alert and stay on the page
+        echo "<script>
+                alert('Error: " . $conn->error . "');
+              </script>";
+    }
+}
+?>
+
+<!-- Registration Form -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,6 +80,7 @@
                 <option>Bashundhara</option>
                 <option>Shyamoli</option>
                 <option>Farmgate</option>
+                <option>Puran Dhaka</option>
             </select><br>
 
             <!-- Role Selection Dropdown -->
@@ -54,12 +93,12 @@
         </form>
 
         <p class="text-center text-gray-600 mt-4">Already have an account? 
-            <a href="login.html" class="text-red-600 font-semibold hover:underline">Login here</a>
+            <a href="login.php" class="text-red-600 font-semibold hover:underline">Login here</a>
         </p>
 
         <!-- Return Home Button -->
         <div class="text-center mt-4">
-            <a href="index.html" class="bg-white text-red-600 px-6 py-2 rounded-full font-semibold text-lg shadow-lg hover:bg-red-100 transition">Return Home</a>
+            <a href="index.php" class="bg-white text-red-600 px-6 py-2 rounded-full font-semibold text-lg shadow-lg hover:bg-red-100 transition">Return Home</a>
         </div>
     </section>
 
