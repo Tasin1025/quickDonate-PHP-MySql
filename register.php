@@ -5,33 +5,35 @@ include('config.php');
 // Check if the form is submitted
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Get and sanitize user inputs
-    $name = mysqli_real_escape_string($conn, $_POST['name']);
-    $email = mysqli_real_escape_string($conn, $_POST['email']);
-    $password = mysqli_real_escape_string($conn, $_POST['password']);
-    $blood_group = mysqli_real_escape_string($conn, $_POST['blood_group']);
-    $area = mysqli_real_escape_string($conn, $_POST['area']);
-    $role = mysqli_real_escape_string($conn, $_POST['role']);
+$name = mysqli_real_escape_string($conn, $_POST['name']);
+$email = mysqli_real_escape_string($conn, $_POST['email']);
+$password = mysqli_real_escape_string($conn, $_POST['password']);
+$blood_group = mysqli_real_escape_string($conn, $_POST['blood_group']);
+$area = mysqli_real_escape_string($conn, $_POST['area']);
+$role = mysqli_real_escape_string($conn, $_POST['role']);
+$phone = mysqli_real_escape_string($conn, $_POST['phone']);  // New field for phone number
 
-    // Hash the password
-    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+// Hash the password
+$hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-    // Prepare SQL to insert data into the users table
-    $sql = "INSERT INTO users (name, email, password, blood_group, area, role) 
-            VALUES ('$name', '$email', '$hashed_password', '$blood_group', '$area', '$role')";
+// Prepare SQL to insert data into the users table
+$sql = "INSERT INTO users (name, email, password, blood_group, area, role, phone) 
+        VALUES ('$name', '$email', '$hashed_password', '$blood_group', '$area', '$role', '$phone')";
 
-    // Execute query and check if it was successful
-    if ($conn->query($sql) === TRUE) {
-        // Registration success, show alert and redirect to login page
-        echo "<script>
-                alert('Registration successful! Please login.');
-                window.location.href = 'login.php'; // Redirect to login page
-              </script>";
-    } else {
-        // Registration failed, show error alert and stay on the page
-        echo "<script>
-                alert('Error: " . $conn->error . "');
-              </script>";
-    }
+// Execute query and check if it was successful
+if ($conn->query($sql) === TRUE) {
+    // Registration success, show alert and redirect to login page
+    echo "<script>
+            alert('Registration successful! Please login.');
+            window.location.href = 'login.php'; // Redirect to login page
+          </script>";
+} else {
+    // Registration failed, show error alert and stay on the page
+    echo "<script>
+            alert('Error: " . $conn->error . "');
+          </script>";
+}
+
 }
 ?>
 
@@ -54,6 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <form action="register.php" method="POST" class="mt-6 space-y-4">
             <input type="text" name="name" placeholder="Full Name" class="w-full px-4 py-2 border rounded-lg focus:ring-red-500 focus:border-red-500" required><br>
             <input type="email" name="email" placeholder="Email Address" class="w-full px-4 py-2 border rounded-lg focus:ring-red-500 focus:border-red-500" required><br>
+            <input type="text" name="phone" placeholder="Phone Number" class="w-full px-4 py-2 border rounded-lg focus:ring-red-500 focus:border-red-500" required><br>
             <input type="password" name="password" placeholder="Password" class="w-full px-4 py-2 border rounded-lg focus:ring-red-500 focus:border-red-500" required><br>
 
             <select name="blood_group" class="w-full px-4 py-2 border rounded-lg focus:ring-red-500 focus:border-red-500" required>

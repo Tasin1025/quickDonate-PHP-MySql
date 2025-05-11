@@ -69,12 +69,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </form>
 
         <p class="text-center text-gray-600 mt-4">Don't have an account? 
-            <a href="register.html" class="text-red-600 font-semibold hover:underline">Register here</a>
+            <a href="register.php" class="text-red-600 font-semibold hover:underline">Register here</a>
         </p>
 
         <!-- Return Home Button -->
         <p class="text-center text-gray-600 mt-4">
-            <a href="index.html" class="bg-white text-red-600 px-6 py-2 rounded-full font-semibold text-lg shadow-lg hover:bg-red-100 transition">Return Home</a>
+            <a href="index.php" class="bg-white text-red-600 px-6 py-2 rounded-full font-semibold text-lg shadow-lg hover:bg-red-100 transition">Return Home</a>
         </p>
     </section>
 

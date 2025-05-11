@@ -22,7 +22,7 @@
     <!-- Search Donors Section -->
     <section class="max-w-4xl mx-auto mt-12 p-6 bg-white shadow-lg rounded-lg">
         <h2 class="text-3xl font-bold text-center text-red-600">Search for Blood Donors</h2>
-        <form class="mt-6 flex flex-col sm:flex-row gap-4">
+        <form action="login.php" method="GET" class="mt-6 flex flex-col sm:flex-row gap-4">
             <select class="w-full px-4 py-2 border rounded-lg focus:ring-red-500 focus:border-red-500">
                 <option>Select Blood Group</option>
                 <option>A+</option>
